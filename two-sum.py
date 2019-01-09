@@ -13,12 +13,13 @@ class Solution:
         :rtype: List[int]
         """
         m = {}
-        # stor
+        # store index and value into map type
         for inx, value in enumerate(nums):
             if value in m:
                 m[value].append(inx)
             else:
                 m[value] = [inx]
+        # for each value in m, check the diff whether in m
         for value in m:
             diff = target - value
             if diff == value and len(m[value]) >= 2:
